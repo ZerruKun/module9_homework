@@ -42,16 +42,15 @@ const preparePictures = (apiData) => {
 
 //Событие по нажатию кнопки
 picturesButton.addEventListener("click", (event) => {
-    event.preventDefault() //Чтобы страница не перезагружалась из-за сабмита
+    event.preventDefault() //Явная отмена сабмита и других действий по умолчанию
 
     const picturesAmount = document.querySelector(".pictures-amount").value;
 
-    if (+picturesAmount >= 1 && +picturesAmount <=10 && (+picturesAmount ^ 0) === +picturesAmount && !isNaN(+picturesAmount) && typeof(+picturesAmount) === "number") {
+    if (+picturesAmount >= 1 && +picturesAmount <=10 && (+picturesAmount ^ 0) === +picturesAmount 
+    && !isNaN(+picturesAmount) && typeof(+picturesAmount) === "number") {
         useRequest(`https://picsum.photos/v2/list?limit=${picturesAmount}`, preparePictures);
     } else {
         alert("Введите целое значение от 1 до 10!");
     }
-
-    console.log(typeof(picturesAmount));
 })
 

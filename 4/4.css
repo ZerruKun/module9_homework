@@ -1,0 +1,19 @@
+.pictures-room {
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture-width,
+.picture-height {
+    width: 200px;
+    margin-top: 15px;
+}
+
+.picture-load-button {
+    width: 200px;
+    margin: 10px 0px;
+}
