@@ -20,16 +20,25 @@ const preparePicture = (apiData) => {
 //Событие по нажатию кнопки
 
 pictureButton.addEventListener("click", (event) => {
-    event.preventDefault() //Явная отмена сабмита и других действий по умолчанию
+  event.preventDefault(); //Явная отмена сабмита и других действий по умолчанию
 
-    const width = document.querySelector(".picture-width").value;
-    const height = document.querySelector(".picture-height").value;
+  const width = document.querySelector(".picture-width").value;
+  const height = document.querySelector(".picture-height").value;
 
-    if(+width >= 100 && +width <= 500 && +height >= 100 && +height <= 500 
-        && (+width ^ 0) === +width && !isNaN(+width) && typeof(+width) === "number" 
-        && (+height ^ 0) === +height && !isNaN(+height) && typeof(+height) === "number") {
-            useRequest(`https://picsum.photos/${width}/${height}`, preparePicture);
-    } else {
-        alert("Введите целые значения от 100 до 500");
-    }
-})
+  if (
+    +width >= 100 &&
+    +width <= 500 &&
+    +height >= 100 &&
+    +height <= 500 &&
+    (+width ^ 0) === +width &&
+    !isNaN(+width) &&
+    typeof +width === "number" &&
+    (+height ^ 0) === +height &&
+    !isNaN(+height) &&
+    typeof +height === "number"
+  ) {
+    useRequest(`https://picsum.photos/${width}/${height}`, preparePicture);
+  } else {
+    alert("Введите целые значения от 100 до 500");
+  }
+});

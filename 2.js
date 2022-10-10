@@ -26,7 +26,6 @@ const peopleDataArray = peopleList.list;
 
 peopleDataArray.forEach((el) => {
   console.log(
-    "Имя: " + el.name + " | " + "Возраст: " + el.age + " | " +
-    "Профессия: " + el.prof
+    "Имя: " + el.name + " | " + "Возраст: " + el.age + " | " + "Профессия: " + el.prof
   );
 });
